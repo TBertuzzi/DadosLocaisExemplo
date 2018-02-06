@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DadosLocaisExemplo.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,16 @@ namespace DadosLocaisExemplo
         public MainPage()
         {
             InitializeComponent();
+
+            if(Settings.Login.Length > 0)
+            {
+                txtLogin.Text = Settings.Login;
+            }
+        }
+
+        private void btnSalvar_Clicked(object sender, EventArgs e)
+        {
+            Settings.Login = txtLogin.Text;
         }
     }
 }
